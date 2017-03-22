@@ -16,7 +16,7 @@ class Album
 
   def save()
     sql = "
-    INSERT INTO artists (
+    INSERT INTO albums (
     title,
     genre,
     artist_id
