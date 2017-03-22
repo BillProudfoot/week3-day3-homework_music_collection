@@ -1,6 +1,7 @@
 require ('pg')
 require_relative('../db/sql_runner')
 require_relative('album')
+require_relative('artist_data')
 
 class Album
 
@@ -42,5 +43,16 @@ class Album
     result = SqlRunner.run(sql)
   end 
 
+  def albums_by_artist()
+    sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
+    results = SqlRunner.run(sql)
+    albums = results.map {|artist| Album.new(artist)}
+    return albums
+  end
+
+  # def self.find(id)
+  #   sql = "SELECT * FROM albums WHERE id = #{id}"
+  #   result = SqlRunner.run(sql)
+  # end
 
 end

@@ -1,6 +1,7 @@
 require ('pg')
 require_relative('../db/sql_runner')
 require_relative('artist')
+require_relative('album')
 
 class Artist
 
